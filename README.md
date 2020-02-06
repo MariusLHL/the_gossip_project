@@ -18,8 +18,6 @@ Pour explorer la BDD
 
 `tp Tag.all`
 
-`tp JoinTableTagGossip.all`
-
 `tp PrivateMessage.all`
 
 `tp City.all`
