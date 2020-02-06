@@ -11,6 +11,7 @@ City.destroy_all
 Tag.destroy_all
 JoinTag.destroy_all
 Gossip.destroy_all
+PrivateMessage.destroy_all
 
 10.times do
   City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
@@ -32,6 +33,6 @@ end
   JoinTag.create(tag_id: Faker::Number.within(range: Tag.first.id..Tag.last.id), gossip_id: Faker::Number.within(range: Gossip.first.id..Gossip.last.id))
 end
 
-10.times do
-  PrivateMessage.new(content: "yolo", recipient_id: Faker::Number.within(range: User.first.id..User.last.id), sender_id: User.last.id)
+80.times do
+  PrivateMessage.create(content: Faker::Lorem.sentence, recipient_id: rand( User.first.id..User.last.id), sender_id: rand( User.first.id..User.last.id))
 end
